@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #0a0a0f;
+  --color-foreground: #e0e0e0;
+  --color-primary: #00ff88;
+  --color-primary-foreground: #0a0a0f;
+  --color-secondary: #1a1a2e;
+  --color-secondary-foreground: #e0e0e0;
+  --color-destructive: #ff3355;
+  --color-destructive-foreground: #ffffff;
+  --color-muted: #1a1a2e;
+  --color-muted-foreground: #8888aa;
+  --color-card: #12121a;
+  --color-card-foreground: #e0e0e0;
+  --color-border: #2a2a3e;
+  --color-ring: #00ff88;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+@utility neon-glow {
+  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+}
+
+@utility neon-text {
+  text-shadow: 0 0 7px var(--color-primary), 0 0 10px var(--color-primary);
+}
+
+@utility neon-glow-red {
+  box-shadow: 0 0 10px var(--color-destructive), 0 0 20px var(--color-destructive);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
